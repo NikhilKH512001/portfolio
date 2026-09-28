@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '../components/Button';
-import { heroData } from '../data';
+import { usePortfolioData } from '../data';
 import Hero3D from '../components/Hero3D';
 
 const Hero = () => {
+    const { heroData } = usePortfolioData();
+    if (!heroData) return null;
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <Hero3D />

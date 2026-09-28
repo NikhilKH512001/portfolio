@@ -9,10 +9,13 @@ import Experience from './sections/Experience';
 import Contact from './sections/Contact';
 import AnimatedBackground from './components/AnimatedBackground';
 import ScrollProgress from './components/ScrollProgress';
+import AdminPanel from './components/AdminPanel';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className="min-h-screen text-gray-900 dark:text-white selection:bg-brand-primary selection:text-white relative transition-colors duration-300">
+      <Toaster position="bottom-right" />
       <ScrollProgress />
       <AnimatedBackground />
       <Navbar />
@@ -25,6 +28,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <AdminPanel />
     </div>
   );
 }

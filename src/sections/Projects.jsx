@@ -3,9 +3,11 @@ import { ArrowUpRight } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
 import Card from '../components/Card';
 import Tilt from '../components/Tilt';
-import { projectsData } from '../data';
+import { usePortfolioData } from '../data';
 
 const Projects = () => {
+    const { projectsData } = usePortfolioData();
+    if (!projectsData) return null;
     return (
         <SectionWrapper id="projects">
             <div className="text-center mb-16">

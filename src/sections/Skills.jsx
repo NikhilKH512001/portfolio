@@ -1,8 +1,10 @@
 import SectionWrapper from '../components/SectionWrapper';
 import Card from '../components/Card';
-import { skillsData } from '../data';
+import { usePortfolioData } from '../data';
 
 const Skills = () => {
+    const { skillsData } = usePortfolioData();
+    if (!skillsData) return null;
     return (
         <SectionWrapper id="skills">
             <div className="text-center mb-16">

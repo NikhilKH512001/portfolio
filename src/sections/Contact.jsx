@@ -55,7 +55,6 @@ const Contact = () => {
 
     return (
         <SectionWrapper id="contact" className="mb-20">
-            <Toaster position="bottom-right" />
             <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Let's Work Together</h2>

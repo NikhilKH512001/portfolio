@@ -1,7 +1,9 @@
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
-import { socialData } from '../data';
+import { usePortfolioData } from '../data';
 
 const Footer = () => {
+  const { socialData } = usePortfolioData();
+  if (!socialData) return null;
     return (
         <footer className="bg-gray-50 dark:bg-brand-gray py-12 border-t border-gray-200 dark:border-white/10 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

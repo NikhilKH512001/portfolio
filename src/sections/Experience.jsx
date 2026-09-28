@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
-import { experienceData } from '../data';
+import { usePortfolioData } from '../data';
 
 const Experience = () => {
+    const { experienceData } = usePortfolioData();
+    if (!experienceData) return null;
     return (
         <SectionWrapper id="experience">
             <div className="text-center mb-16">

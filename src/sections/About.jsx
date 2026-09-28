@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
-import { aboutData } from '../data';
+import { usePortfolioData } from '../data';
 
 const About = () => {
+    const { aboutData } = usePortfolioData();
+    if (!aboutData) return null;
     return (
         <SectionWrapper id="about">
             <div className="grid md:grid-cols-2 gap-12 items-center">
