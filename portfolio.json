@@ -1,0 +1,208 @@
+{
+  "heroData": {
+    "name": "Nikhil K H",
+    "role": "Associate Software Engineer",
+    "tagline": "Passionate about building scalable applications and intuitive UIs."
+  },
+  "aboutData": {
+    "bio": "Software Engineer with 2 years of hands-on experience in building and maintaining scalable web applications using Java, Spring Boot, Angular, React, Python, and SQL. Currently working as an Associate Software Engineer on an enterprise-grade ML Composer platform, contributing across backend services and frontend modules. Strong foundation in REST APIs, database design, and full stack development, with a focus on clean code, performance optimization, and real-world problem solving.",
+    "image": "LOCAL_PROFILE_IMG"
+  },
+  "skillsData": [
+    {
+      "name": "Java.",
+      "icon": "Code"
+    },
+    {
+      "name": "Python",
+      "icon": "Code"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "Code"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "Code"
+    },
+    {
+      "name": "C/C++",
+      "icon": "Cpu"
+    },
+    {
+      "name": "React",
+      "icon": "Layout"
+    },
+    {
+      "name": "Angular",
+      "icon": "Layout"
+    },
+    {
+      "name": "HTML5/CSS3",
+      "icon": "Layout"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "Layout"
+    },
+    {
+      "name": "Spring Boot",
+      "icon": "Server"
+    },
+    {
+      "name": "Hibernate",
+      "icon": "Database"
+    },
+    {
+      "name": "Django",
+      "icon": "Server"
+    },
+    {
+      "name": "Flask",
+      "icon": "Server"
+    },
+    {
+      "name": "SQL",
+      "icon": "Database"
+    },
+    {
+      "name": "MySQL",
+      "icon": "Database"
+    },
+    {
+      "name": "MSSQL",
+      "icon": "Database"
+    },
+    {
+      "name": "REST APIs",
+      "icon": "Globe"
+    },
+    {
+      "name": "Git",
+      "icon": "Terminal"
+    }
+  ],
+  "projectsData": [
+    {
+      "title": "ML Composer Platform",
+      "description": "Enterprise application for configuring, training, and managing ML pipelines. Implemented backend services with Spring Boot and frontend modules using Angular.",
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "SQL"
+      ],
+      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Tourism Management System",
+      "description": "Developed a user-friendly website for tourism management. Implemented robust backend operations using Python and Django.",
+      "tags": [
+        "Python",
+        "Django",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ],
+      "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Blood Management System",
+      "description": "Created a JSP-based website for blood registration and order management, maintaining blood unit details.",
+      "tags": [
+        "JSP",
+        "Java",
+        "Web"
+      ],
+      "image": "https://images.unsplash.com/photo-1615461066841-6116e61058f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Automobile Showroom",
+      "description": "Designed an interactive PHP-based website for browsing and exploring vehicles.",
+      "tags": [
+        "PHP",
+        "Web",
+        "Interactive"
+      ],
+      "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Cattle Tracking Counter",
+      "description": "Implemented an Arduino-based solution using Ultrasonic sensors to develop a Bidirectional Counter for cattle tracking.",
+      "tags": [
+        "Arduino",
+        "IoT",
+        "C++"
+      ],
+      "image": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Cattle Domestication Analysis",
+      "description": "Conducted data analysis on cattle ownership, gender distribution, and shelter availability to furnish perspectives on management practices.",
+      "tags": [
+        "Data Analysis",
+        "Research"
+      ],
+      "image": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Garbage Classifier",
+      "description": "Developed a web application with Flask and Python, integrating a Deep Learning-based Automatic Garbage Classifier.",
+      "tags": [
+        "Python",
+        "Flask",
+        "Deep Learning"
+      ],
+      "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "link": "#"
+    },
+    {
+      "title": "Library Management System",
+      "description": "Created a web application for book and student management using HTML, CSS, and C# with ASP.net.",
+      "tags": [
+        "C#",
+        "ASP.NET",
+        "HTML/CSS"
+      ],
+      "image": "https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "link": "#"
+    }
+  ],
+  "experienceData": [
+    {
+      "role": "Associate Software Engineer / Full Stack Java Developer",
+      "company": "Trinity Mobility Private Ltd.",
+      "date": "Apr 2024 – Present",
+      "description": "Contributing to ML Composer, an enterprise application for ML workflows. Designed and implemented RESTful APIs using Java and Spring Boot. Developed Angular-based UI components. optimized database interactions using SQL and Hibernate."
+    },
+    {
+      "role": "Full Stack Python Developer (Intern)",
+      "company": "techCentrix",
+      "date": "Oct 2022 – Dec 2022",
+      "description": "Developed a full-stack web application using Python, Django, and MySQL. Built responsive user interfaces with HTML, CSS, Bootstrap. Implemented client-side validation, reducing errors by ~40%."
+    }
+  ],
+  "socialData": [
+    {
+      "name": "LinkedIn",
+      "icon": "Linkedin",
+      "url": "https://www.linkedin.com/in/nikhil-k-h-223718244"
+    },
+    {
+      "name": "Email",
+      "icon": "Mail",
+      "url": "mailto:nikhilkh54@gmail.com"
+    },
+    {
+      "name": "GitHub",
+      "icon": "Github",
+      "url": "https://github.com/NikhilKH512001?tab=repositories"
+    }
+  ]
+}
