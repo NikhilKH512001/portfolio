@@ -4,6 +4,7 @@ import { Send, Loader2 } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
+import { usePortfolioData } from '../data';
 
 const Contact = () => {
     const { configData } = usePortfolioData();
