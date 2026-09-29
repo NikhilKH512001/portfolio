@@ -85,12 +85,6 @@ const Contact = () => {
                     action="https://formsubmit.co/nikhilkh54@gmail.com"
                     method="POST"
                 >
-                    {/* FormSubmit Configuration */}
-                    <input type="hidden" name="_subject" value="New Portfolio Contact Message!" />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="box" />
-                    <input type="hidden" name="_next" value="https://NikhilKH512001.github.io/portfolio" />
-
                     <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label htmlFor="name" className="text-sm font-medium text-gray-500 dark:text-gray-400">Name</label>
