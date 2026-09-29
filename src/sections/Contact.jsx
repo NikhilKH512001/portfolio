@@ -82,16 +82,23 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                     className="space-y-6 bg-white dark:bg-brand-gray p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg dark:shadow-none"
-                    onSubmit={handleSubmit}
+                    action="https://formsubmit.co/nikhilkh54@gmail.com"
+                    method="POST"
                 >
+                    {/* FormSubmit Configuration */}
+                    <input type="hidden" name="_subject" value="New Portfolio Contact Message!" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="box" />
+                    <input type="hidden" name="_next" value="https://NikhilKH512001.github.io/portfolio" />
+
                     <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <label htmlFor="name" className="text-sm font-medium text-gray-500 dark:text-gray-400">Name</label>
                             <input
                                 type="text"
                                 id="name"
-                                value={formData.name}
-                                onChange={handleChange}
+                                name="name"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors"
                                 placeholder="Your Name"
                             />
@@ -101,8 +108,8 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
-                                value={formData.email}
-                                onChange={handleChange}
+                                name="email"
+                                required
                                 className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors"
                                 placeholder="name@example.com"
                             />
@@ -113,23 +120,16 @@ const Contact = () => {
                         <label htmlFor="message" className="text-sm font-medium text-gray-500 dark:text-gray-400">Message</label>
                         <textarea
                             id="message"
+                            name="message"
                             rows="4"
-                            value={formData.message}
-                            onChange={handleChange}
+                            required
                             className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors resize-none"
                             placeholder="Tell me about your project..."
                         />
                     </div>
 
-                    <Button variant="primary" className="w-full justify-center" disabled={isSubmitting}>
-                        {isSubmitting ? (
-                            <>
-                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                Sending...
-                            </>
-                        ) : (
-                            'Send Message'
-                        )}
+                    <Button type="submit" variant="primary" className="w-full justify-center">
+                        Send Message
                     </Button>
                 </motion.form>
             </div>
