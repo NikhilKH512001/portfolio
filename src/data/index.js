@@ -51,6 +51,7 @@ export const usePortfolioData = () => {
     }));
 
     return {
+        configData: data.configData || {},
         heroData,
         aboutData,
         skillsData,

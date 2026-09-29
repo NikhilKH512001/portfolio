@@ -6,6 +6,7 @@ import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
 
 const Contact = () => {
+    const { configData } = usePortfolioData();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -82,8 +83,50 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                     className="space-y-6 bg-white dark:bg-brand-gray p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg dark:shadow-none"
-                    action="https://formsubmit.co/nikhilkh54@gmail.com"
-                    method="POST"
+                    onSubmit={async (e) => {
+                        e.preventDefault();
+                        const accessKey = configData?.web3formsKey;
+                        
+                        if (!accessKey) {
+                            toast.error("Web3Forms Access Key is missing! Please configure it in the Admin Panel.");
+                            return;
+                        }
+
+                        if (!formData.name || !formData.email || !formData.message) {
+                            toast.error('Please fill in all fields');
+                            return;
+                        }
+
+                        setIsSubmitting(true);
+
+                        try {
+                            const response = await fetch("https://api.web3forms.com/submit", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    Accept: "application/json",
+                                },
+                                body: JSON.stringify({
+                                    access_key: accessKey,
+                                    name: formData.name,
+                                    email: formData.email,
+                                    message: formData.message,
+                                }),
+                            });
+
+                            const result = await response.json();
+                            if (response.ok) {
+                                toast.success("Message sent successfully!");
+                                setFormData({ name: '', email: '', message: '' });
+                            } else {
+                                toast.error(result.message || "Something went wrong.");
+                            }
+                        } catch (error) {
+                            toast.error("Network error. Please try again later.");
+                        } finally {
+                            setIsSubmitting(false);
+                        }
+                    }}
                 >
                     <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-2">
@@ -92,6 +135,8 @@ const Contact = () => {
                                 type="text"
                                 id="name"
                                 name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 required
                                 className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors"
                                 placeholder="Your Name"
@@ -103,6 +148,8 @@ const Contact = () => {
                                 type="email"
                                 id="email"
                                 name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
                                 className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors"
                                 placeholder="name@example.com"
@@ -116,14 +163,23 @@ const Contact = () => {
                             id="message"
                             name="message"
                             rows="4"
+                            value={formData.message}
+                            onChange={handleChange}
                             required
                             className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition-colors resize-none"
                             placeholder="Tell me about your project..."
                         />
                     </div>
 
-                    <Button type="submit" variant="primary" className="w-full justify-center">
-                        Send Message
+                    <Button type="submit" variant="primary" className="w-full justify-center" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                            <>
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                Sending...
+                            </>
+                        ) : (
+                            'Send Message'
+                        )}
                     </Button>
                 </motion.form>
             </div>
