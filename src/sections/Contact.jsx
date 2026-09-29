@@ -82,8 +82,18 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                     className="space-y-6 bg-white dark:bg-brand-gray p-8 rounded-2xl border border-gray-100 dark:border-white/5 shadow-lg dark:shadow-none"
-                    action="https://formsubmit.co/nikhilkh54@gmail.com"
-                    method="POST"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const formData = new FormData(e.target);
+                        const name = formData.get('name');
+                        const email = formData.get('email');
+                        const message = formData.get('message');
+                        
+                        const subject = encodeURIComponent(`New Portfolio Contact from ${name}`);
+                        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                        
+                        window.location.href = `mailto:nikhilkh54@gmail.com?subject=${subject}&body=${body}`;
+                    }}
                 >
                     <div className="grid grid-cols-2 gap-6">
                         <div className="space-y-2">
