@@ -20,7 +20,7 @@ const About = () => {
                         <img
                             src={aboutData.image}
                             alt="Profile"
-                            className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition duration-500"
+                            className="object-cover w-full h-full transition duration-500"
                         />
                     </div>
                 </motion.div>

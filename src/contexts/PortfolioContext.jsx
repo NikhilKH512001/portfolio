@@ -30,10 +30,29 @@ export const PortfolioProvider = ({ children }) => {
       });
   }, []);
 
-  const loginAdmin = (token) => {
-    setGithubToken(token);
-    setIsEditMode(true);
-    toast.success("Admin mode activated!");
+  const loginAdmin = async (token) => {
+    const toastId = toast.loading("Verifying token...");
+    try {
+      const response = await fetch('https://api.github.com/user', {
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      if (response.ok) {
+        setGithubToken(token);
+        setIsEditMode(true);
+        toast.success("Admin mode activated!", { id: toastId });
+        return true;
+      } else {
+        toast.error("Invalid GitHub token!", { id: toastId });
+        return false;
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Network error during verification.", { id: toastId });
+      return false;
+    }
   };
 
   const updateData = (section, newData) => {

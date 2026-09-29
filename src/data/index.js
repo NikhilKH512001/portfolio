@@ -15,7 +15,7 @@ import {
     Link
 } from 'lucide-react';
 
-import profileImg from '../assets/myImage.png';
+import profileImg from '../assets/image_with_suite.png';
 import { usePortfolio } from '../contexts/PortfolioContext';
 
 // Map of icon names to lucide components

@@ -35,9 +35,11 @@ const AdminPanel = () => {
         />
         <div className="flex gap-2">
           <button 
-            onClick={() => {
-              loginAdmin(tokenInput);
-              setJsonText(JSON.stringify(data, null, 2));
+            onClick={async () => {
+              const success = await loginAdmin(tokenInput);
+              if (success) {
+                setJsonText(JSON.stringify(data, null, 2));
+              }
             }}
             className="bg-brand-primary text-white px-3 py-1 text-sm rounded"
           >
@@ -57,10 +59,10 @@ const AdminPanel = () => {
   // Edit Mode UI
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-900 w-full max-w-4xl h-[80vh] rounded-xl flex flex-col overflow-hidden">
-        <div className="p-4 border-b dark:border-gray-700 flex justify-between items-center">
-          <h2 className="text-xl font-bold dark:text-white">Portfolio Content Editor</h2>
-          <div className="space-x-2">
+      <div className="bg-white dark:bg-gray-900 w-full max-w-4xl h-[90vh] md:h-[80vh] rounded-xl flex flex-col overflow-hidden">
+        <div className="p-4 border-b dark:border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+          <h2 className="text-lg md:text-xl font-bold dark:text-white">Portfolio Content Editor</h2>
+          <div className="flex gap-2 w-full md:w-auto">
             <button 
               onClick={() => {
                 try {
@@ -72,13 +74,13 @@ const AdminPanel = () => {
                   alert("Invalid JSON data!");
                 }
               }}
-              className="bg-green-600 text-white px-4 py-2 rounded font-medium"
+              className="flex-1 md:flex-none bg-green-600 text-white px-3 md:px-4 py-2 rounded font-medium text-sm md:text-base"
             >
               Save to GitHub
             </button>
             <button 
               onClick={() => window.location.reload()}
-              className="bg-red-600 text-white px-4 py-2 rounded font-medium"
+              className="flex-1 md:flex-none bg-red-600 text-white px-3 md:px-4 py-2 rounded font-medium text-sm md:text-base"
             >
               Close
             </button>
